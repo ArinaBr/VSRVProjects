@@ -6,7 +6,7 @@ void *functionC();
 pthread_mutex_t mutex1 = PTHREAD_MUTEX_INITIALIZER;
 int  counter = 0;
 
-main() {
+int main() {
         int rc1, rc2;
         pthread_t thread1, thread2;
 

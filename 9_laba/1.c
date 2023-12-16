@@ -14,7 +14,7 @@ int main(void) {
                 exit(EXIT_FAILURE);
         }
 
-        printf("segment created: %d\n", shmid); \
+        printf("created segment: %d\n", shmid); \
         system("ipcs -m");
         exit(EXIT_SUCCESS);
 }
