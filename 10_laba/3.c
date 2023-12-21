@@ -5,8 +5,8 @@
 void* PrintHello(void* data) {
         pthread_t tid;
         tid = (pthread_t)data;
-        printf("\n I am thread %u \n", tid);
-        printf("\n Hello from new thread %u - got %u\n", pthread_self(), tid);
+        printf("\n I am thread %lu \n", tid);
+        printf("\n Hello from new thread %lu - got %lu\n", pthread_self(), tid);
         pthread_exit(NULL);
 }
 

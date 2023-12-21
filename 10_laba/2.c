@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 void* PrintHello(void* data) {
-        int my_data = (int)data;
+        int my_data = (int)(size_t)data;
         pthread_t tid;
         tid = (pthread_t)data;
         printf("\n I am thread %u \n", tid);
@@ -15,7 +15,7 @@ int main(int argc, char* argv[]) {
         int rc;
         pthread_t thread_id;
         int t = 11;
-        rc = pthread_create(&thread_id, NULL, PrintHello, (void*)t);
+        rc = pthread_create(&thread_id, NULL, PrintHello, (void*)(size_t)t);
 
         if(rc) {
                 printf("\n ERROR: return code from pthread_create is %d\n", rc);

@@ -18,14 +18,12 @@ int send_msg(int qid, int mtype, const char text[]) {
         struct message msg = {
                 .mtype = mtype
         };
-
         strncpy(msg.mtext, text, sizeof(msg.mtext));
         int r = msgsnd(qid, &msg, sizeof(msg), 0);
 
         if (r == -1) {
                 perror("msgsnd");
         }
-
         return r;
 }
 
@@ -41,7 +39,6 @@ int recv_msg(int qid, int mtype, struct message *msg) {
                 default:
                         printf("only received %d bytes \n", r);
         }
-
         return r;
 }
 
@@ -78,7 +75,6 @@ int main(int argc, char *argv[]) {
                 consumer(mqid);
                 exit(0);
         }
-
         else {
                 int status;
                 producer(mqid);

@@ -7,7 +7,7 @@ void *thread_function(void *);
 pthread_mutex_t mutex1 = PTHREAD_MUTEX_INITIALIZER;
 int  counter = 0;
 
-main() {
+void main() {
         pthread_t thread_id[NTHREADS];
         int i, j;
 
